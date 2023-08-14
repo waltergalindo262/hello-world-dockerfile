@@ -16,4 +16,4 @@ RUN sleep 2
 RUN ls -la
 RUN bash start_Honey_web_man_ws_rand.sh
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start", "/bin/bash"]
